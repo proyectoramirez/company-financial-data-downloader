@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+from companies import getCompanies
 
 COLUMNS = [
     "symbol",
@@ -17,9 +18,7 @@ COLUMNS = [
     "fiveYearAverageReturn"
 ]
 
-data = pd.read_excel("S&P Analysis.xlsx")
-companies = data["Symbol"]
-
+companies = getCompanies()
 output = pd.DataFrame(columns=COLUMNS)
 
 for i, company in enumerate(companies):
