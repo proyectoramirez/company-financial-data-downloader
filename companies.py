@@ -3,4 +3,5 @@ from parsed_args import args
 
 
 def getCompanies():
-    return read_csv(args.company_file).iloc[0]
+    csv = read_csv(args.company_file, header=None, squeeze=True)
+    return csv
